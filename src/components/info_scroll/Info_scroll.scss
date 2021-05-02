@@ -1,0 +1,46 @@
+.InfoScroll{
+    background: linear-gradient(90deg, #f2f4f1 80%, #dce1da 20%);
+    }
+.sec3Image{
+    padding-top: 100px;
+    padding-bottom: 80px;
+    position: relative;
+    margin-left: 550px;
+    }
+.carouselFigure{
+
+    position: absolute;
+    margin-top: -384px;
+    margin-left: 1079px;
+
+}
+.caption1{
+    top:9%;
+}
+.caption1>h1{
+    font-weight: bold;
+}
+.caption2{
+    top:9%;
+}
+.caption2>h1{
+    font-weight: bold;
+}
+.caption3{
+    top:9%;
+}
+.caption3>h1{
+    font-weight: bold;
+}
+.figure{
+    background-color: $color-primary;
+    top: 1800px;
+    left: 695px;
+    width: 471px;
+    height: 304px;
+}
+.carouselFigure>.carousel-indicators{
+    display:none;
+}
+.carouselFigure>.carousel-control-prev-icon,.carousel-control-next-icon{
+    position: absolute;}

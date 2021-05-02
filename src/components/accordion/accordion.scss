@@ -1,0 +1,25 @@
+.accordion>.card>.card-header{
+    background-color: $color-primary;
+}
+.AccordionToggle{
+    color:black;
+}
+.imageAccordion{
+  position: relative;
+  left: 596px;
+  width: 770px;
+  height: 768px;
+ z-index: 0;
+  bottom:150px;
+}
+.accordion{
+    position: relative;
+    z-index: 1;
+    left: 171px;
+    top: 435px;
+    width: 500px;
+}
+.sectionAccordion{
+    background: linear-gradient(90deg,#dce1da 20%, #f2f4f1 80% );
+    background-image:  url("../../assets/img/leaf-rip-paper-blank.jpg");
+}
