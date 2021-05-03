@@ -19,7 +19,7 @@ const Contact = () =>{
             let responseData = await sendEmail (formData) 
             //console.log (responseData)
             document.getElementById("contactForm").reset();
-            alert("Mensaje enviado con éxito");
+           // alert("Mensaje enviado con éxito");
 
         }
 
