@@ -1,50 +1,58 @@
 import React, {useState} from 'react';
 import {Form, Button, Container, Row, Col, Alert} from "react-bootstrap";
 import ContactImage from '../assets/img/contact-image.png';
+import Spinner from 'react-bootstrap/Spinner';
 import {sendEmail} from "../axios/index";
-import homeLogo from "../../src/assets/img/home-icon.png";
+import swal from 'sweetalert';
+
 
 const Contact = () =>{
-    const [validate, setValidate] = useState(false)
+    const [validate, setValidate] = useState(true)
     const [formData, setFormData] = useState({})
+    const [loading, setLoading] = useState(false)
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
-       // console.log('Se envio')
+       //console.log('Se envio')
         const form = e.currentTarget;
-        //console.log(form.checkValidity ())
 
-        if (form.checkValidity ()){
-            //console.log (formData)
-            let responseData = await sendEmail (formData) 
+        if (!formData.name=="" && !formData.phone==""&& !formData.email==""&& !formData.message==""){         
+            
+            setLoading(true);
+            //console.log(loading);
+           let responseData = await sendEmail (formData) 
+           
             //console.log (responseData)
-            document.getElementById("contactForm").reset();
-           // alert("Mensaje enviado con éxito");
-
+           document.getElementById("contactForm").reset();
+           setLoading(false);
+            swal("Su mensaje se envio con éxito"); 
+            setFormData ({});
+            //console.log(loading);
+          
+        }else{
+            swal("Por favor llene todos los campos del formulario");
         }
-
-
-
-
     }
 
     const resetForm = () =>{
         document.getElementById("contactForm").reset();
     }
 
-
     const handleOnChange = (e) => {
     let data = {}
-    data [e.target.name] = e.target.value
-        
+    data [e.target.name] = e.target.value  
         setFormData ((prevState)=> {
             return {
                 ...prevState, [e.target.name] : e.target.value
+ 
             }
         })
+
+
        
 }
 console.log (formData)
+
     return(
         <section className="contact" id="#contacto">
             <Container>
@@ -92,15 +100,17 @@ console.log (formData)
                                     ></Form.Control>
                             </Form.Group>
                     
-  <Button className='buttonForm' onClick={handleSubmit}>                          
+  {!loading &&<Button className='buttonForm' onClick={handleSubmit}>                          
     Submit
-  </Button>
+  </Button>}
+  {loading &&<Spinner animation="border" styles={{width:'85px'},{height:'85px'}} variant="success" />}
 &emsp;
   <Button className='buttonForm' onClick={resetForm}>                          
     Clear
   </Button>
 
 </Form>
+
                     </Col>
                     <Col md={12} lg={5}>
                         <img src={ContactImage} alt='Contact' className='imagenContacto'></img>

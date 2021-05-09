@@ -5,7 +5,7 @@
     width: 100%;
     transition: all 0,5s ease 0s;
     padding: 20px;
-   background: transparent;
+   background:  linear-gradient(90deg, rgba(254,97,9,0.25252107679009106) 0%, rgba(254,97,9,0.17969194513742992) 100%);
    box-shadow: 0 3px 1rem rgba(0,0,0,.1);
 
 
@@ -22,8 +22,7 @@
 
 }
 .navbar11.active{
-    background:$color-primary;
-}
+    background: linear-gradient(90deg, rgba(254,97,9,1) 0%, rgba(0,0,0,1) 35%, rgba(0,0,0,0.12366953617384457) 100%);}
 .header-scrolled{
     background-color: $color-primary;   
      border-bottom: 1px solid black;

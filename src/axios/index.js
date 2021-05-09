@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const instance = axios.create({
-    baseURL: 'http://apimolina.herokuapp.com/public/api/'
+    baseURL:  'http://localhost:8000/api/'
 })
 
 const sendEmail = async (data) => {
